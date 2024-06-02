@@ -1,5 +1,7 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "pre-load": true,
+    "focus-load": true,
     "description": {
         "zh_tw": "CDPS 的 顏色 log 輸出"
     },

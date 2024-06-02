@@ -1,8 +1,10 @@
-import cdps.utils.logger
-import pytz
 import logging
 
-from cdps.utils.logger import Log, CustomTimedRotatingFileHandler, CustomFormatter
+import pytz
+
+import cdps.utils.logger
+from cdps.utils.logger import (CustomFormatter, CustomTimedRotatingFileHandler,
+                               Log)
 
 
 class _ColoredFormatter(CustomFormatter):
@@ -54,4 +56,7 @@ def _setup_logger(self, *, url):
 cdps.utils.logger.Log.setup_logger = _setup_logger
 
 Log.reset_instance()
-logger = Log()
+
+
+def initialize(completion_event):
+    completion_event.set()
