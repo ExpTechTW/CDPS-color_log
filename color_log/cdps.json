@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0",
+    "description": {
+        "zh_tw": "CDPS 的 顏色 log 輸出"
+    },
+    "author": [
+        "YuYu1015"
+    ],
+    "dependencies": {
+        "cdps": ">=1.0.13"
+    },
+    "resources": [
+        "AGPL-3.0"
+    ],
+    "link": "https://github.com/ExpTechTW/CDPS"
+}
