@@ -1,9 +1,11 @@
-# 模板
+# CDPS-color_log
 <img alt="Discord" src="https://img.shields.io/discord/926545182407688273">
 
 ------
 
-- 這是一個 ExpTech Github 模板
+- CDPS 的 顏色 Log 輸出
+
+![image](https://github.com/ExpTechTW/CDPS-color_log/assets/44525760/1a8d825f-7922-4c21-b253-e0f31041de18)
 
 ## 索引
 - [貢獻者](#貢獻者)
