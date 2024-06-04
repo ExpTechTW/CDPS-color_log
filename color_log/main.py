@@ -3,15 +3,25 @@ import sys
 
 import pytz
 
-from cdps.config import Config
 import cdps.utils.logger
-from cdps.utils.logger import (CustomTimedRotatingFileHandler,
-                               Log)
+from cdps.config import Config
+from cdps.plugin.events import Event
+from cdps.plugin.manager import Manager
+from cdps.utils.logger import CustomTimedRotatingFileHandler, Log
+
+
+class onLogEvent(Event):
+    """ 當 輸出日誌 """
+
+    def __init__(self, log):
+        self.log = log
 
 
 class PlainFormatter(logging.Formatter):
     def format(self, record):
-        return super().format(record)
+        msg = super().format(record)
+        event_manager.call_event(onLogEvent(msg))
+        return msg
 
 
 class _ColoredFormatter(logging.Formatter):
@@ -72,6 +82,7 @@ cdps.utils.logger.Log.setup_logger = _setup_logger
 Log.reset_instance()
 log = Log()
 config = Config()
+event_manager = Manager()
 log.logger.setLevel(config._data['log_level'])
 log.logger.day = config._data['log_save_days']
 
